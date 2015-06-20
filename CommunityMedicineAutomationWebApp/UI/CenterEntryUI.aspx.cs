@@ -17,6 +17,7 @@ namespace CommunityMedicineAutomationWebApp.UI
 
        
         List<Thana> thanas = new List<Thana>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack)
@@ -51,6 +52,16 @@ namespace CommunityMedicineAutomationWebApp.UI
             string message = centerManager.Insert(center);
 
             label6.Text = message;
+
+            
+
+        
+            Response.Redirect("ShowCenterInfoUI.aspx");
+
+            Session["centername"] = center.Name;
+            Session["code"] = center.Code;
+            Session["password"] = center.Password;
+            
         }
 
 
