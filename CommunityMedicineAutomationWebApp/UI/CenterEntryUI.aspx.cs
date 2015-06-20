@@ -41,6 +41,13 @@ namespace CommunityMedicineAutomationWebApp.UI
 
             center.ThanaId = int.Parse(thanaDropDownList.SelectedValue.ToString());
 
+            string districtname = districtDropDownList.SelectedItem.Text;
+            string thananame = thanaDropDownList.SelectedItem.Text;
+
+            center.Code = GetCode(districtname, thananame);
+
+            center.Password = GetPassword();
+
             string message = centerManager.Insert(center);
 
             label6.Text = message;
@@ -72,5 +79,34 @@ namespace CommunityMedicineAutomationWebApp.UI
 
             thanaDropDownList.DataBind();
         }
+
+
+
+        public  string GetCode(string districtName, string thanaName)
+        {
+
+            Random rand = new Random();
+
+            string code = districtName.Substring(0, 2) + thanaName.Substring(0, 2) + rand.Next(1, 1000).ToString();
+
+            return code;
+        }
+
+        public string GetPassword()
+        {
+            Random rand = new Random();
+            string password = "";
+            for (int i = 0; i < 3; i++)
+            {
+                char letter = (char)('a' + rand.Next(0, 26));
+                password += letter.ToString();
+                password += rand.Next(0, 20).ToString();
+
+            }
+
+            return password;
+        }
+
+
     }
 }

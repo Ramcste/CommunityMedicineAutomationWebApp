@@ -14,6 +14,11 @@ namespace CommunityMedicineAutomationWebApp.Models
 
         public int ThanaId { get; set; }
 
+        public string Password { get; set; }
+
+        public string Code { get; set; }
+
+
 
 
     }

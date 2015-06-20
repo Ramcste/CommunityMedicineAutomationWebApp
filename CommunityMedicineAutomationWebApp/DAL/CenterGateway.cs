@@ -21,7 +21,7 @@ namespace CommunityMedicineAutomationWebApp.DAL
         {
             SqlConnection connection = new SqlConnection(connectionstring);
 
-            string query = "INSERT INTO Table_Center (center_Name,center_DistrictId,center_ThanaId) VALUES('" + center.Name + "','" + center.DistrictId + "','" + center.ThanaId + "')";
+            string query = "INSERT INTO Table_Center VALUES('" + center.Name + "','" + center.Code + "','" + center.Password + "','" + center.DistrictId + "','" + center.ThanaId + "')";
 
             SqlCommand command = new SqlCommand(query, connection);
 

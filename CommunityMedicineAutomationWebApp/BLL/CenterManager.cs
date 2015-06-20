@@ -42,5 +42,9 @@ namespace CommunityMedicineAutomationWebApp.BLL
             return centerGateway.GetThanaAccordingToDistrict(id);
 
         }
+
+        
+
+
     }
 }
