@@ -56,12 +56,10 @@ namespace CommunityMedicineAutomationWebApp.UI
             
 
         
-            Response.Redirect("ShowCenterInfoUI.aspx");
+            Response.Redirect("ShowCenterInfoUI.aspx?districtName="+districtname+"&thanaName="+thananame+"&centerName="+center.Name+"&centerCode="+center.Code+"&centerPassword="+center.Password);
 
-            Session["centername"] = center.Name;
-            Session["code"] = center.Code;
-            Session["password"] = center.Password;
-            
+
+
         }
 
 

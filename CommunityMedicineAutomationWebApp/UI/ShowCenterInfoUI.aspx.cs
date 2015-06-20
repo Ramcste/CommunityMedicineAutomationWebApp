@@ -11,9 +11,18 @@ namespace CommunityMedicineAutomationWebApp.UI
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (centerName != null) centerName.Text = ViewState["centername"].ToString();
-            if (centerCode != null) centerCode.Text = ViewState["code"].ToString();
-            if (centerPassword != null) centerPassword.Text = ViewState["password"].ToString();
+            
+            string DistrictName = Request["districtName"];
+            string ThanaName = Request["thanaName"];
+            string Name = Request["centerName"];
+            string Code = Request["centerCode"];
+            string Password = Request["centerPassword"];
+
+            districtName.Text = DistrictName;
+            thanaName.Text = ThanaName;
+            centerName.Text = Name;
+            centerCode.Text = Code;
+            centerPassword.Text = Password;
         }
     }
 }

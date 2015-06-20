@@ -11,6 +11,19 @@
     <div>
     
         <table>
+            
+            <tr>
+                <td><asp:Label runat="server" >District Name:</asp:Label></td>
+                <td><asp:Label runat="server" ID="districtName"></asp:Label></td>
+
+            </tr>
+            
+            <tr>
+                <td><asp:Label runat="server" >Thana Name:</asp:Label></td>
+                <td><asp:Label runat="server" ID="thanaName"></asp:Label></td>
+
+            </tr>
+
             <tr>
                 <td><asp:Label runat="server" >Center Name:</asp:Label></td>
                 <td><asp:Label runat="server" ID="centerName"></asp:Label></td>
