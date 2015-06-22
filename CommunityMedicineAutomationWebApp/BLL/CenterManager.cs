@@ -17,7 +17,7 @@ namespace CommunityMedicineAutomationWebApp.BLL
 
             if (value > 0)
             {
-                return "Save Successfully";
+                return "Saved Successfully";
             }
 
             else
@@ -43,8 +43,40 @@ namespace CommunityMedicineAutomationWebApp.BLL
 
         }
 
-        
 
+        public bool  LoginMessage(string code,string password)
+        {
+            return centerGateway.Login(code, password);
+
+           
+
+        }
+
+        public string Insert(Doctor doctor)
+        {
+            int value = centerGateway.Insert(doctor);
+
+            if (value > 0)
+            {
+                return "Saved Successfully";
+            }
+
+            else
+            {
+                return "Operation Failed";
+            }
+        }
+
+
+        public int GetCenterId(string name)
+        {
+            return centerGateway.GetCenterId(name);
+        }
+
+        public List<Center> GetAllCentersByThana(int id)
+        {
+            return centerGateway.GetCenterAccordingToThana(id);
+        } 
 
     }
 }

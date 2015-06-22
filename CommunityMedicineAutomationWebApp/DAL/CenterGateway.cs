@@ -134,5 +134,113 @@ namespace CommunityMedicineAutomationWebApp.DAL
         }
 
 
+
+        public bool Login(string code,string password)
+        {
+            bool login = false;
+            SqlConnection connection = new SqlConnection(connectionstring);
+
+            string query = "SELECT center_Code,center_Password FROM Table_Center WHERE center_Code='"+code+"' AND center_Password='"+password+"'";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            connection.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                login = true;
+                break;
+            }
+             
+
+            connection.Close();
+
+            return login;
+            
+        }
+
+
+
+      
+
+
+        public int Insert(Doctor doctor)
+        {
+            SqlConnection connection = new SqlConnection(connectionstring);
+
+            string query = "INSERT INTO Table_Doctor VALUES ('" + doctor.Name + "','" + doctor.Degree + "','" + doctor.Specialzation + "','"+doctor.CenterId+"')";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            connection.Open();
+
+            int rowsAffected = command.ExecuteNonQuery();
+
+            connection.Close();
+
+            return rowsAffected;
+        }
+
+
+        public int GetCenterId(string code)
+        {
+            int centerId = 0;
+
+            SqlConnection connection = new SqlConnection(connectionstring);
+
+            string query = "SELECT center_Id FROM Table_Center WHERE center_Code='" + code + "'";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            connection.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+
+                centerId = int.Parse(reader["center_Id"].ToString());
+            }
+
+
+            connection.Close();
+
+            return centerId;
+        }
+
+        public List<Center> GetCenterAccordingToThana(int id)
+        {
+            List<Center> centerList = new List<Center>();
+
+
+            SqlConnection connection = new SqlConnection(connectionstring);
+            
+            string query = "SELECT center_Id,center_Name FROM Table_Center WHERE center_ThanaId='" + id + "'";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            connection.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Center center = new Center();
+                center.Id = int.Parse(reader["center_Id"].ToString());
+                center.Name = reader["center_Name"].ToString();
+
+                centerList.Add(center);
+
+            }
+            reader.Close();
+            connection.Close();
+
+            return centerList;
+        }
+
+
+
     }
 }

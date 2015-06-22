@@ -5,6 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+  <!--  <script src="../JavaScripts/printingOperation.js"></script>
+      -->
 </head>
 <body>
     <form id="form1" runat="server">
@@ -44,7 +46,7 @@
             
             <tr>
                 <td></td>
-                <td></td>
+                <td><asp:Button runat="server" ID="centerInfoPrintButton" Text="Print" OnClientClick="javascript:window.print();" OnClick="centerInfoPrintButton_OnClick" /></td>
             </tr>
 
         </table>

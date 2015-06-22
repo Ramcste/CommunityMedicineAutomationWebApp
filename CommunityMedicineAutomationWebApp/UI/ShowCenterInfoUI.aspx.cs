@@ -24,5 +24,12 @@ namespace CommunityMedicineAutomationWebApp.UI
             centerCode.Text = Code;
             centerPassword.Text = Password;
         }
+
+        protected void centerInfoPrintButton_OnClick(object sender, EventArgs e)
+        {
+            ClientScript.RegisterStartupScript(this.GetType(), "PrintOperation", "printing()", true);
+        }
+
+        
     }
 }

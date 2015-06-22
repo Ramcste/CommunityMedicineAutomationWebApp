@@ -10,7 +10,7 @@
 namespace CommunityMedicineAutomationWebApp.UI {
     
     
-    public partial class ShowCenterInfoUI {
+    public partial class CenterLoginUI {
         
         /// <summary>
         /// form1 control.
@@ -22,57 +22,57 @@ namespace CommunityMedicineAutomationWebApp.UI {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// districtName control.
+        /// label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label districtName;
+        protected global::System.Web.UI.WebControls.Label label1;
         
         /// <summary>
-        /// thanaName control.
+        /// codeTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label thanaName;
+        protected global::System.Web.UI.WebControls.TextBox codeTextBox;
         
         /// <summary>
-        /// centerName control.
+        /// label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label centerName;
+        protected global::System.Web.UI.WebControls.Label label2;
         
         /// <summary>
-        /// centerCode control.
+        /// passwordTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label centerCode;
+        protected global::System.Web.UI.WebControls.TextBox passwordTextBox;
         
         /// <summary>
-        /// centerPassword control.
+        /// loginCenterButon control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label centerPassword;
+        protected global::System.Web.UI.WebControls.Button loginCenterButon;
         
         /// <summary>
-        /// centerInfoPrintButton control.
+        /// label3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button centerInfoPrintButton;
+        protected global::System.Web.UI.WebControls.Label label3;
     }
 }

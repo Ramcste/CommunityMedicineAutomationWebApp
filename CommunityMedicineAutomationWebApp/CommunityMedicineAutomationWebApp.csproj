@@ -65,19 +65,49 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="JavaScripts\printingOperation.js" />
+    <Content Include="UI\CenterHomeUI.aspx" />
+    <Content Include="UI\PatientsRegistrationUI.aspx" />
+    <Content Include="UI\DoctorEntryUI.aspx" />
     <Content Include="UI\CenterEntryUI.aspx" />
+    <Content Include="UI\CenterLoginUI.aspx" />
     <Content Include="UI\DiseasesEntryUI.aspx" />
     <Content Include="UI\MedicineEntryUI.aspx" />
+    <Content Include="UI\SendMedicineUI.aspx" />
     <Content Include="UI\ShowCenterInfoUI.aspx" />
+    <Content Include="UI\StockReportUI.aspx" />
+    <Content Include="UI\TreatmentGivenUI.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\DiseaseManager.cs" />
     <Compile Include="BLL\MedicineManager.cs" />
     <Compile Include="BLL\CenterManager.cs" />
+    <Compile Include="Models\Doctor.cs" />
+    <Compile Include="UI\CenterHomeUI.aspx.cs">
+      <DependentUpon>CenterHomeUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\CenterHomeUI.aspx.designer.cs">
+      <DependentUpon>CenterHomeUI.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DAL\CenterGateway.cs" />
     <Compile Include="DAL\DiseaseGateway.cs" />
     <Compile Include="DAL\MedicineGateway.cs" />
+    <Compile Include="UI\PatientsRegistrationUI.aspx.cs">
+      <DependentUpon>PatientsRegistrationUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\PatientsRegistrationUI.aspx.designer.cs">
+      <DependentUpon>PatientsRegistrationUI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DoctorEntryUI.aspx.cs">
+      <DependentUpon>DoctorEntryUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\DoctorEntryUI.aspx.designer.cs">
+      <DependentUpon>DoctorEntryUI.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Center.cs" />
     <Compile Include="Models\Disease.cs" />
     <Compile Include="Models\District.cs" />
@@ -90,6 +120,13 @@
     </Compile>
     <Compile Include="UI\CenterEntryUI.aspx.designer.cs">
       <DependentUpon>CenterEntryUI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CenterLoginUI.aspx.cs">
+      <DependentUpon>CenterLoginUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\CenterLoginUI.aspx.designer.cs">
+      <DependentUpon>CenterLoginUI.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\DiseasesEntryUI.aspx.cs">
       <DependentUpon>DiseasesEntryUI.aspx</DependentUpon>
@@ -105,12 +142,33 @@
     <Compile Include="UI\MedicineEntryUI.aspx.designer.cs">
       <DependentUpon>MedicineEntryUI.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UI\SendMedicineUI.aspx.cs">
+      <DependentUpon>SendMedicineUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\SendMedicineUI.aspx.designer.cs">
+      <DependentUpon>SendMedicineUI.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UI\ShowCenterInfoUI.aspx.cs">
       <DependentUpon>ShowCenterInfoUI.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UI\ShowCenterInfoUI.aspx.designer.cs">
       <DependentUpon>ShowCenterInfoUI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\StockReportUI.aspx.cs">
+      <DependentUpon>StockReportUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\StockReportUI.aspx.designer.cs">
+      <DependentUpon>StockReportUI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TreatmentGivenUI.aspx.cs">
+      <DependentUpon>TreatmentGivenUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\TreatmentGivenUI.aspx.designer.cs">
+      <DependentUpon>TreatmentGivenUI.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
