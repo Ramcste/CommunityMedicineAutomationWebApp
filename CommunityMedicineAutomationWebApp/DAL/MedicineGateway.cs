@@ -64,7 +64,66 @@ namespace CommunityMedicineAutomationWebApp.DAL
 
         }
 
+        public bool IsThisMedicineNameExists(string name)
+        {
+            bool nameexists = false;
+
+            SqlConnection connection = new SqlConnection(connectionstring);
+
+            string query = "SELECT * FROM Table_Medicine WHERE medicine_Name='"+name+"'";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            connection.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                nameexists = true;
+                break;
+            }
+
+            return nameexists;
+
+
+
+
+        }
+
+
+        public List<MedicineQuantity> GetdicineQuantities()
+        {
+            List<MedicineQuantity> medicines = new List<MedicineQuantity>();
+
+            SqlConnection connection = new SqlConnection(connectionstring);
+
+            string query = "SELECT * FROM Table_MedicineQuantity";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            connection.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                MedicineQuantity medicine = new MedicineQuantity();
+
+                medicine.Id = int.Parse(reader["medicineQuantity_Id"].ToString());
+                medicine.Name = reader["medicineQuantity_Name"].ToString();
+                medicine.Quantity = int.Parse(reader["medicineQuantity_Quantity"].ToString());
+                medicine.CenterId = int.Parse(reader["medicineQuantity_CenterId"].ToString());
+
+                medicines.Add(medicine);
+            }
+
+            return medicines;
+
+
+        } 
       
+
 
     }
 }

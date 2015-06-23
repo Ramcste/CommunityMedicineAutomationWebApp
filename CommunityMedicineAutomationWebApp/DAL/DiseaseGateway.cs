@@ -65,5 +65,33 @@ namespace CommunityMedicineAutomationWebApp.DAL
 
 
         }
+
+        public bool HasThisDiesesName(string name) 
+        {
+            bool diseasename = false;
+
+            SqlConnection connection = new SqlConnection(connectionstring);
+
+            string query = "SELECT * FROM Table_Disease WHERE disease_Name='" + name + "'";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            connection.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                diseasename = true;
+                break;
+            }
+
+            return diseasename;
+
+
+
+
+        
+        }
     }
 }

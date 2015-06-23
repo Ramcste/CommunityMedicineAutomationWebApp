@@ -13,6 +13,8 @@ namespace CommunityMedicineAutomationWebApp.BLL
 
         public string Insert(Center center)
         {
+
+
             int value = centerGateway.Insert(center);
 
             if (value > 0)
@@ -54,6 +56,24 @@ namespace CommunityMedicineAutomationWebApp.BLL
 
         public string Insert(Doctor doctor)
         {
+            if (doctor.Name == "") 
+            {
+                return "doctor name is missing";
+            }
+
+            else if(doctor.Degree=="")
+            {
+                return "doctor's degree is missing";
+            }
+
+            else if(doctor.Specialzation=="")
+            {
+                return "doctor's specialization is missing";
+            }
+
+            else 
+            {
+            
             int value = centerGateway.Insert(doctor);
 
             if (value > 0)
@@ -66,7 +86,7 @@ namespace CommunityMedicineAutomationWebApp.BLL
                 return "Operation Failed";
             }
         }
-
+        }
 
         public int GetCenterId(string name)
         {
@@ -79,9 +99,27 @@ namespace CommunityMedicineAutomationWebApp.BLL
         }
 
 
-        public int InsertMedicialQunatity(MedicineQuantity medicineQuantity)
+        public string  InsertMedicineQunatity(MedicineQuantity medicineQuantity)
         {
-            return centerGateway.MedicineQuantityEntry(medicineQuantity);
+
+            int value=centerGateway.MedicineQuantityEntry(medicineQuantity);
+
+            if (value > 0) 
+            {
+                return "medicine quantity saved successfully";
+            }
+
+            else 
+            {
+                return "Operation Failed";
+            }
+        
+        }
+
+
+        public int GetUpdateMedicineQuantity(string name, int value) 
+        {
+            return centerGateway.GetUpdateMedicineQuantity(name,value);
         }
     }
 }

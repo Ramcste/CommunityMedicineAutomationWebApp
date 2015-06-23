@@ -14,9 +14,6 @@ namespace CommunityMedicineAutomationWebApp.DAL
         private string connectionstring =
          WebConfigurationManager.ConnectionStrings["MedicineAutomationConString"].ConnectionString;
 
-
-
-
         public int Insert(Center center)
         {
             SqlConnection connection = new SqlConnection(connectionstring);
@@ -101,7 +98,6 @@ namespace CommunityMedicineAutomationWebApp.DAL
 
         }
 
-
         public List<Thana> GetThanaAccordingToDistrict(int id)
         {
             List<Thana> thanas=new List<Thana>();
@@ -133,8 +129,6 @@ namespace CommunityMedicineAutomationWebApp.DAL
             return thanas;
         }
 
-
-
         public bool Login(string code,string password)
         {
             bool login = false;
@@ -161,11 +155,6 @@ namespace CommunityMedicineAutomationWebApp.DAL
             
         }
 
-
-
-      
-
-
         public int Insert(Doctor doctor)
         {
             SqlConnection connection = new SqlConnection(connectionstring);
@@ -182,7 +171,6 @@ namespace CommunityMedicineAutomationWebApp.DAL
 
             return rowsAffected;
         }
-
 
         public int GetCenterId(string code)
         {
@@ -240,7 +228,6 @@ namespace CommunityMedicineAutomationWebApp.DAL
             return centerList;
         }
 
-
         public int MedicineQuantityEntry(MedicineQuantity medicineQuantity)
         {
             SqlConnection connection = new SqlConnection(connectionstring);
@@ -258,6 +245,50 @@ namespace CommunityMedicineAutomationWebApp.DAL
             return rowsAffected;
         }
 
+        public int GetUpdateMedicineQuantity(string name,int value)
+        {
+            SqlConnection connection = new SqlConnection(connectionstring);
+
+            string query = "UPDATE Table_MedicineQuantity SET medicineQuantity_Quantity+='" + value + "' WHERE medicineQunatity_Name='" + name + "'";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            connection.Open();
+
+            int rowsAffected = command.ExecuteNonQuery();
+
+            connection.Close();
+
+            return rowsAffected;
+
+        }
+
+
+        public bool HasThisCenterNameExists(string name)
+        {
+            bool namexists = false;
+            SqlConnection connection = new SqlConnection(connectionstring);
+
+            string query = "SELECT center_Name FROM Table_Center WHERE center_Name='" + name + "'";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            connection.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                namexists = true;
+                break;
+            }
+
+
+            connection.Close();
+
+            return namexists;
+            
+        }
 
     }
 }

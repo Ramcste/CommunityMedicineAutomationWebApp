@@ -1,5 +1,0 @@
-﻿function printing() {
-    window.print();
-
-
-}

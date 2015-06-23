@@ -29,7 +29,9 @@
     </nav>
     <div class="wrapper">
     
-        <h1>Welcome to the stock</h1>
+       
+        <asp:GridView ID="medicineStockGridView" runat="server" Width="550px">
+        </asp:GridView>
 
     </div>
     </form>

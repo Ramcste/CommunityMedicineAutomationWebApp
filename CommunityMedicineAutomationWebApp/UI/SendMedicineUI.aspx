@@ -49,6 +49,8 @@
         
         <asp:Button runat="server" ID="saveMedicineQuantityInformationButton" Text="Save" OnClick="saveMedicineQuantityInformationButton_OnClick"/>
 
+        <asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
+
     </div>
     </form>
 </body>

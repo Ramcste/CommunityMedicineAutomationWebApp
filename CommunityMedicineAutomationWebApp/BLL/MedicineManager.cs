@@ -12,23 +12,50 @@ namespace CommunityMedicineAutomationWebApp.BLL
         MedicineGateway medicineGateway=new MedicineGateway();
         public string Insert(Medicine medicine)
         {
-            int value = medicineGateway.Insert(medicine);
 
-            if (value > 0)
+            if (medicine.Name == "")
             {
-                return "Save Successfully";
+                return "medicine name is missing";
+
+            }
+
+            else if (medicineGateway.IsThisMedicineNameExists(medicine.Name)) 
+            {
+                return "medicine name already exists!!";
             }
 
             else
             {
-                return "Operation Failed";
+                int value = medicineGateway.Insert(medicine);
+
+                if (value > 0)
+                {
+                    return "Saved Successfully";
+                }
+
+                else
+                {
+                    return "Operation Failed";
+                }
             }
         }
-
 
         public List<Medicine> GetAll()
         {
             return medicineGateway.GetllMedicines();
+        }
+
+
+
+        public bool MedicineName(string name)
+        {
+            return medicineGateway.IsThisMedicineNameExists(name);
+        }
+
+
+        public List<MedicineQuantity> GetMedicineQuantities()
+        {
+            return medicineGateway.GetdicineQuantities();
         } 
     }
 }

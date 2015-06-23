@@ -13,20 +13,44 @@ namespace CommunityMedicineAutomationWebApp.BLL
 
         public string Insert(Disease disease)
         {
-            int value = diseaseGateway.Insert(disease);
 
-            if (value > 0)
+            if (disease.Name == "")
             {
-                return "Save Successfully";
+                return "disease name is missing";
+            }
+
+            else if (disease.Description == "")
+            {
+                return "disease description is missing";
+            }
+
+
+            else if (disease.TreatmentProcedure == "")
+            {
+                return "disease treatment procedure is missing";
+            }
+
+            else if (diseaseGateway.HasThisDiesesName(disease.Name))
+            {
+                return "disease name already exists";
             }
 
             else
             {
-                return "Operation Failed";
+                int value = diseaseGateway.Insert(disease);
+
+                if (value > 0)
+                {
+                    return "Saved Successfully";
+                }
+
+                else
+                {
+                    return "Operation Failed";
+                }
             }
+
         }
-
-
         public List<Disease> GetAll()
         {
             return diseaseGateway.GetllDiseases();

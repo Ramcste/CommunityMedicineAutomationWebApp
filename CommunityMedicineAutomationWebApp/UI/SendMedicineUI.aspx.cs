@@ -23,7 +23,7 @@ namespace CommunityMedicineAutomationWebApp.UI
             {
                 GetLoadedDistrictDropDownList();
                 GetLoadedThanaDropDownList();
-                GetLoadedCenterDropDownList();
+                GetLoadedCenterDropDownList();         
                 GetLoadedMedicineDropDownList();
                 GetDataLoadedInGridView();
                 medicineQuantityGridView.DataSource = dt;
@@ -67,6 +67,9 @@ namespace CommunityMedicineAutomationWebApp.UI
           
 
             GetLoadedThanaDropDownList();
+            GetLoadedCenterDropDownList();
+
+
             
         }
 
@@ -78,7 +81,6 @@ namespace CommunityMedicineAutomationWebApp.UI
 
         }
 
-
         public void GetLoadedThanaDropDownList()
         {
             int id = Convert.ToInt16(districtDropDownList.SelectedValue);
@@ -86,8 +88,7 @@ namespace CommunityMedicineAutomationWebApp.UI
             thanaDropDownList.DataValueField = "Id";
             thanaDropDownList.DataTextField = "Name";
             thanaDropDownList.DataBind();
-
-
+          
         }
 
 
@@ -146,11 +147,30 @@ namespace CommunityMedicineAutomationWebApp.UI
                 quantity = int.Parse(row.Cells[1].Text);
 
                 medicineQuantity.Name = name;
+                             
                 medicineQuantity.Quantity = quantity;
-                medicineQuantity.CenterId = int.Parse(centerDropDownList.SelectedIndex.ToString()+1);
+                         
+                medicineQuantity.CenterId = int.Parse(centerDropDownList.SelectedValue);
 
-                centerManager.InsertMedicialQunatity(medicineQuantity);
 
+                if (medicineManager.MedicineName(name))
+                {
+                    centerManager.GetUpdateMedicineQuantity(medicineQuantity.Name, medicineQuantity.Quantity);
+                    centerManager.InsertMedicineQunatity(medicineQuantity);
+               
+                }
+
+                else
+                {
+
+                    centerManager.InsertMedicineQunatity(medicineQuantity);
+
+                }
+
+
+                medicineQuantityGridView.DataSource = null;
+                medicineQuantityGridView.DataBind();
+               
             }
 
           
