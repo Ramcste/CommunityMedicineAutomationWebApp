@@ -48,6 +48,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -84,6 +85,7 @@
     <Compile Include="BLL\MedicineManager.cs" />
     <Compile Include="BLL\CenterManager.cs" />
     <Compile Include="Models\Doctor.cs" />
+    <Compile Include="Models\MedicineQuantity.cs" />
     <Compile Include="UI\CenterHomeUI.aspx.cs">
       <DependentUpon>CenterHomeUI.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
+using System.Data;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 using CommunityMedicineAutomationWebApp.BLL;
+using CommunityMedicineAutomationWebApp.Models;
 
 namespace CommunityMedicineAutomationWebApp.UI
 {
@@ -13,6 +12,11 @@ namespace CommunityMedicineAutomationWebApp.UI
         CenterManager centerManager=new CenterManager();
 
         MedicineManager medicineManager=new MedicineManager();
+     
+        DataTable dt = new DataTable();
+
+        MedicineQuantity medicineQuantity=new MedicineQuantity();
+       
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -21,13 +25,41 @@ namespace CommunityMedicineAutomationWebApp.UI
                 GetLoadedThanaDropDownList();
                 GetLoadedCenterDropDownList();
                 GetLoadedMedicineDropDownList();
-                
+                GetDataLoadedInGridView();
+                medicineQuantityGridView.DataSource = dt;
+                medicineQuantityGridView.DataBind();
+               
             }
         }
 
         protected void medicnieAddButton_Click(object sender, EventArgs e)
         {
+            if (ViewState["save"] != null)
+            
+                dt = (DataTable)ViewState["save"];
+            
+           
+               // GetDataLoadedInGridView();
+                string name = medicineDropDownList.SelectedItem.Text;
+                int quantity = int.Parse(quantityTextBox.Text);
 
+                
+
+                DataRow dr = dt.NewRow();
+                dr["Name"] = name;
+                dr["Quantity"] = quantity.ToString();
+
+
+                dt.Rows.Add(dr);
+
+                ViewState["save"] = dt;
+                medicineQuantityGridView.DataSource = dt;
+                medicineQuantityGridView.DataBind();
+       
+              
+            
+         
+          
         }
 
         protected void districtDropDownList_SelectedIndexChanged(object sender, EventArgs e)
@@ -89,6 +121,41 @@ namespace CommunityMedicineAutomationWebApp.UI
 
 
         }
-    
+
+
+        public void GetDataLoadedInGridView()
+        {
+            dt.Columns.Add("Name", typeof(string));
+            dt.Columns.Add("Quantity", typeof(string));
+
+            ViewState["save"] = dt;
+        }
+
+        protected void saveMedicineQuantityInformationButton_OnClick(object sender, EventArgs e)
+        {
+
+            string name = "";
+            int quantity=0;
+
+
+            foreach (GridViewRow row in medicineQuantityGridView.Rows)
+            {
+                System.Web.UI.WebControls.TextBox txtBox = (System.Web.UI.WebControls.TextBox) row.FindControl("TextBox");
+
+                name = row.Cells[0].Text;
+                quantity = int.Parse(row.Cells[1].Text);
+
+                medicineQuantity.Name = name;
+                medicineQuantity.Quantity = quantity;
+                medicineQuantity.CenterId = int.Parse(centerDropDownList.SelectedIndex.ToString()+1);
+
+                centerManager.InsertMedicialQunatity(medicineQuantity);
+
+            }
+
+          
+        }
+
+       
     }
 }

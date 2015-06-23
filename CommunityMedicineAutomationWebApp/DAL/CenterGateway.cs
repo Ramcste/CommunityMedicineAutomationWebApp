@@ -241,6 +241,23 @@ namespace CommunityMedicineAutomationWebApp.DAL
         }
 
 
+        public int MedicineQuantityEntry(MedicineQuantity medicineQuantity)
+        {
+            SqlConnection connection = new SqlConnection(connectionstring);
+
+            string query = "INSERT INTO Table_MedicineQuantity VALUES('" + medicineQuantity.Name + "','" + medicineQuantity.Quantity + "','" + medicineQuantity.CenterId + "')";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            connection.Open();
+
+            int rowsAffected = command.ExecuteNonQuery();
+
+            connection.Close();
+
+            return rowsAffected;
+        }
+
 
     }
 }

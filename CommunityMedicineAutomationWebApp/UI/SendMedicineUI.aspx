@@ -35,6 +35,20 @@
                 <td><asp:Button ID="medicnieAddButton" runat="server" Text="Add" OnClick="medicnieAddButton_Click" style="height: 26px" /></td>
             </tr>
         </table>
+        <br/>
+        <br/>
+        
+        <asp:GridView runat="server" ID="medicineQuantityGridView"  Width="505px">
+           
+           
+
+        </asp:GridView>
+        
+        <br/>
+        <br/>
+        
+        <asp:Button runat="server" ID="saveMedicineQuantityInformationButton" Text="Save" OnClick="saveMedicineQuantityInformationButton_OnClick"/>
+
     </div>
     </form>
 </body>

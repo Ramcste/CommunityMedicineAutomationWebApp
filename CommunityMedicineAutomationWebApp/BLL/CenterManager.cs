@@ -76,7 +76,12 @@ namespace CommunityMedicineAutomationWebApp.BLL
         public List<Center> GetAllCentersByThana(int id)
         {
             return centerGateway.GetCenterAccordingToThana(id);
-        } 
+        }
 
+
+        public int InsertMedicialQunatity(MedicineQuantity medicineQuantity)
+        {
+            return centerGateway.MedicineQuantityEntry(medicineQuantity);
+        }
     }
 }
