@@ -8,9 +8,38 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        
+          <nav>
+    
+        <ul>
+            <li>
+                 <a href="MedicineEntryUI.aspx">MedicineEntryUI</a>
+            </li>
+            <li>
+                <a href="DiseasesEntryUI.aspx">DiseasesEntryx</a>
+            </li>
+            <li>
+                <a href="CenterEntryUI.aspx">CenterEntryUI</a>
+            </li>
+           
+            <li>
+                <a href="SendMedicineUI.aspx">SendMedicineUI</a>
+            </li>
+           <li>
+                <a href="CenterLoginUI.aspx">CenterLoginUI</a> 
+            </li>
+
+
+        </ul>
+    </nav>
+        <br/>
+        <br/>
+
     <div class="container">
         
          <table>
+             <tr><td>
+                 <asp:Label ID="Label4" runat="server" Text="Center Enty "></asp:Label></td></tr>
             <tr>
                 <td><asp:Label runat="server" ID="label1">Name</asp:Label></td>
                 <td><asp:TextBox runat="server" ID="nameTextBox" Width="220"/></td>

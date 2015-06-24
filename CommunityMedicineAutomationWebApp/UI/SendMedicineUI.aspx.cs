@@ -156,7 +156,7 @@ namespace CommunityMedicineAutomationWebApp.UI
                 if (medicineManager.MedicineName(name))
                 {
                     centerManager.GetUpdateMedicineQuantity(medicineQuantity.Name, medicineQuantity.Quantity);
-                    centerManager.InsertMedicineQunatity(medicineQuantity);
+                   centerManager.InsertMedicineQunatity(medicineQuantity);
                
                 }
 

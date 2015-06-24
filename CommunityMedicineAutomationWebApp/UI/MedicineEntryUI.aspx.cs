@@ -30,6 +30,7 @@ namespace CommunityMedicineAutomationWebApp.UI
 
             label5.Text = message;
             GetLoadedMedicineGridView();
+            nameTextBox.Text = String.Empty;
 
         }
 

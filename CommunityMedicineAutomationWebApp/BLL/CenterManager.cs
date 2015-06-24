@@ -13,21 +13,27 @@ namespace CommunityMedicineAutomationWebApp.BLL
 
         public string Insert(Center center)
         {
-
-
-            int value = centerGateway.Insert(center);
-
-            if (value > 0)
+            if (center.Name == "")
             {
-                return "Saved Successfully";
+                return "center name is missing";
             }
 
             else
             {
-                return "Operation Failed";
+
+                int value = centerGateway.Insert(center);
+
+                if (value > 0)
+                {
+                    return "Saved Successfully";
+                }
+
+                else
+                {
+                    return "Operation Failed";
+                }
             }
         }
-
 
         public List<Thana> GetThanaList()
         {
@@ -44,7 +50,6 @@ namespace CommunityMedicineAutomationWebApp.BLL
             return centerGateway.GetThanaAccordingToDistrict(id);
 
         }
-
 
         public bool  LoginMessage(string code,string password)
         {
@@ -98,7 +103,6 @@ namespace CommunityMedicineAutomationWebApp.BLL
             return centerGateway.GetCenterAccordingToThana(id);
         }
 
-
         public string  InsertMedicineQunatity(MedicineQuantity medicineQuantity)
         {
 
@@ -116,10 +120,12 @@ namespace CommunityMedicineAutomationWebApp.BLL
         
         }
 
-
         public int GetUpdateMedicineQuantity(string name, int value) 
         {
             return centerGateway.GetUpdateMedicineQuantity(name,value);
         }
+  
+    
+    
     }
 }

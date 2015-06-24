@@ -249,7 +249,7 @@ namespace CommunityMedicineAutomationWebApp.DAL
         {
             SqlConnection connection = new SqlConnection(connectionstring);
 
-            string query = "UPDATE Table_MedicineQuantity SET medicineQuantity_Quantity+='" + value + "' WHERE medicineQunatity_Name='" + name + "'";
+            string query = "UPDATE Table_MedicineQuantity SET medicineQuantity_Quantity+='" + value + "' WHERE medicineQuantity_Name='" + name + "'";
 
             SqlCommand command = new SqlCommand(query, connection);
 

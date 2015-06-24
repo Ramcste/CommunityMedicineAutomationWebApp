@@ -24,6 +24,8 @@
             <li>
                 <a href="StockReportUI.aspx">Stock Report</a>
             </li>
+            
+
         </ul>
     </nav>
     </form>

@@ -35,7 +35,7 @@ namespace CommunityMedicineAutomationWebApp.UI
         {
             disease.Name = nameTextBox.Text;
 
-            disease.Description = descriptionTextBox.Text;
+            disease.Description = Request.Form["descriptionTextBox"];
 
             disease.TreatmentProcedure = treatmentProcedureTextBox.Text;
 

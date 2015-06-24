@@ -22,6 +22,15 @@ namespace CommunityMedicineAutomationWebApp.UI {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// Label5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label5;
+        
+        /// <summary>
         /// label1 control.
         /// </summary>
         /// <remarks>
@@ -55,7 +64,7 @@ namespace CommunityMedicineAutomationWebApp.UI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox descriptionTextBox;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea descriptionTextBox;
         
         /// <summary>
         /// label3 control.

@@ -5,9 +5,39 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+   
 </head>
 <body>
+    
+
     <form id="form1" runat="server">
+        
+          <nav>
+    
+        <ul>
+            <li>
+                 <a href="MedicineEntryUI.aspx">MedicineEntryUI</a>
+            </li>
+            <li>
+                <a href="DiseasesEntryUI.aspx">DiseasesEntryx</a>
+            </li>
+            <li>
+                <a href="CenterEntryUI.aspx">CenterEntryUI</a>
+            </li>
+           
+            <li>
+                <a href="SendMedicineUI.aspx">SendMedicineUI</a>
+            </li>
+           <li>
+                <a href="CenterLoginUI.aspx">CenterLoginUI</a> 
+            </li>
+
+
+        </ul>
+    </nav>
+        <br/>
+        <br/>
+
     <div>
         <table>
             <tr>
@@ -49,9 +79,10 @@
         
         <asp:Button runat="server" ID="saveMedicineQuantityInformationButton" Text="Save" OnClick="saveMedicineQuantityInformationButton_OnClick"/>
 
-        <asp:Label ID="Label7" runat="server" Text="Label"></asp:Label>
+        <asp:Label ID="Label7" runat="server" Text=""></asp:Label>
 
     </div>
     </form>
+   
 </body>
 </html>

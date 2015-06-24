@@ -9,3 +9,10 @@ H:\Workspace\Visual Studio 2013\Projects\Web Application Project\CommunityMedici
 H:\Workspace\Visual Studio 2013\Projects\Web Application Project\CommunityMedicineAutomationWebApp\CommunityMedicineAutomationWebApp\obj\Debug\CommunityMedicineAutomationWebApp.dll
 H:\Workspace\Visual Studio 2013\Projects\Web Application Project\CommunityMedicineAutomationWebApp\CommunityMedicineAutomationWebApp\obj\Debug\CommunityMedicineAutomationWebApp.pdb
 H:\Workspace\Visual Studio 2013\Projects\Web Application Project\CommunityMedicineAutomationWebApp\CommunityMedicineAutomationWebApp\obj\Debug\CommunityMedicineAutomationWebApp.csprojResolveAssemblyReference.cache
+E:\Roni\CommunityMedicineAutomationWebApp\CommunityMedicineAutomationWebApp\obj\Debug\CommunityMedicineAutomationWebApp.csprojResolveAssemblyReference.cache
+C:\Users\Web App Develop .Net\Desktop\CommunityMedicineAutomationWebApp\CommunityMedicineAutomationWebApp\bin\CommunityMedicineAutomationWebApp.dll.config
+C:\Users\Web App Develop .Net\Desktop\CommunityMedicineAutomationWebApp\CommunityMedicineAutomationWebApp\bin\CommunityMedicineAutomationWebApp.dll
+C:\Users\Web App Develop .Net\Desktop\CommunityMedicineAutomationWebApp\CommunityMedicineAutomationWebApp\bin\CommunityMedicineAutomationWebApp.pdb
+C:\Users\Web App Develop .Net\Desktop\CommunityMedicineAutomationWebApp\CommunityMedicineAutomationWebApp\obj\Debug\CommunityMedicineAutomationWebApp.csprojResolveAssemblyReference.cache
+C:\Users\Web App Develop .Net\Desktop\CommunityMedicineAutomationWebApp\CommunityMedicineAutomationWebApp\obj\Debug\CommunityMedicineAutomationWebApp.dll
+C:\Users\Web App Develop .Net\Desktop\CommunityMedicineAutomationWebApp\CommunityMedicineAutomationWebApp\obj\Debug\CommunityMedicineAutomationWebApp.pdb
